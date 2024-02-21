@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+*{
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar{
+    background-color:#D2001A;
+    width: 260px;
+    padding: 24px;
+    display: flex;
+    box-sizing: border-box; 
+    flex-direction: column;
+    z-index: 1;
+}
+
+.logo img{
+    height: 10rem;
+    width: 10rem;
+    padding: 30px 30px;
+    border-radius: 50%;
+}
+
+.gambarhome {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    border-radius: 50%;
+}
+
+
+
+.main{
+    background-image:url(Img/Free\ \ Yellow\,\ Foodstuffs\,\ Poster\ Background\ Images\,\ Yellow\ Food\ Background\ Poster\ Photo\ Background\ PNG\ and\ Vectors.jpeg) ;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.palakonto{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px                    ;
+}
+.main img{
+    border-radius: 50%;
+    height: 190px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.main h1{
+    margin: 30px 0;
+}
+
+.sidebar  .header .namatoko{
+    font-weight: 900;
+    font-size: 30px;
+    text-align: center;
+    color: #ffff;
+    display: block;
+}
+
+.sidebar  .header .namatoko span{
+    font-weight: 900;
+    font-size: 30px;
+    text-align: center;
+    color: orange;
+}
+
+.main-sidebar{
+    display: block;
+}
+
+.main-sidebar .list-item{
+    display: flex;
+    margin: 1.5rem 0;
+}
+
+.main-sidebar .list-item img{
+    height: 1.5rem;
+    width: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-sidebar .list-item a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+}
+
+.main-sidebar .list-item a span{
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding-left: 2rem;
+}
+
+.main-sidebar .list-item{
+    display: flex;
+    flex-direction:row ;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 212px;
+    cursor: pointer;
+    transition:all ease-in .2s;
+}
+
+.main-sidebar .list-item:hover{
+    background-color: orange;
+    
+}
+.depan{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.depan img{
+    height: 300px;
+    width: 350px;
+    border-radius: 15px;
+}
+
+.depan h1{
+    font-size: 40px;
+    font-weight: 100px;
+    margin: 18px 0;
+}
+.depan h2{
+    margin: 30px 0;
+}
+.depan h4{
+    font-size: 22px;
+}
+.buton{
+    background-color: rgb(202, 27, 15);
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 60px;
+    width: 200px;
+}
+.buton a{
+    text-decoration: none;
+    color: rgb(255, 248, 248);
+}
+.buton:hover {
+    transform: translateY(15px) ;
+    transition: 0.4s ease-in-out;
+}
+
+/* Menu Togle */
+#menu-button{
+    width: 42px;
+    position: absolute;
+    overflow: hidden;
+    margin: 20px;
+    background-color: #D2001A;
+    padding: 10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+
+#menu-label{
+    position: relative;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+}
+
+#menu-checkbox{
+    display: none;
+}
+
+#hamburger, #menu-label:after, #menu-label:before{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+}
+
+#menu-label:after, #menu-label:before{
+    content:"";
+
+    transition:0.4s cubic-bezier(0.075, 0.82, 0.165, 1) left;
+}
+
+#menu-label:before{
+    top: 0;
+}
+
+#menu-label:after{
+    top: 10px;
+}
+
+#hamburger{
+    top: 20px;
+}
+
+#hamburger:before{
+    content:"MENU";
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 0;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#menu-checkbox:checked + #menu-label:before{
+    left: -55px;
+}
+
+#menu-checkbox:checked + #menu-label:after{
+    left: 55px;
+}
+
+#menu-checkbox:checked + #menu-label #hamburger:before{
+    animation:moveUpThenDown 0.8s  ease 0.2s forwards,
+    shakeUp 0.8s ease 0.2s forwards,
+    shakeDown 0.2s ease 0.8s forwards;  
+}
+
+@keyframes moveUpThenDown {
+    0%{
+        top: 0;
+    }
+    50%{
+        top: -35px;
+    }
+    100%{
+        top: -17px;
+    }
+}
+
+@keyframes shakeUp {
+    0%{
+        transform: rotateZ(0);
+    }
+    25%{
+        transform: rotateZ(-10deg);
+    }
+    50%{
+        transform: rotateZ(0);
+    }
+    75%{
+        transform: rotateZ(10deg);
+    }
+    100%{
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes shakeDown {
+    0%{
+        transform: rotateZ(0);
+    }
+    80%{
+        transform: rotateZ(3deg);
+    }
+    90%{
+        transform: rotateZ(-3deg);
+    }
+    100%{
+        transform: rotateZ(0);
+    }
+}
+
+.sidebar.hide{
+    width: 90px;
+    transition: all ease-out .3s;
+}
+
+.sidebar.hide .logo img{
+    width: 50px;
+    height: 50px;
+    display: none;
+    border-radius: 50%;
+
+}
+
+.sidebar.hide .header .namatoko{
+    display: none;
+}
+
+.sidebar.hide .list-item {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    box-sizing: content-box;
+    padding-left: 15px;
+    padding-right:0px ;
+    padding-top: 15px;
+}
+
+
+.sidebar.hide .list-item span{
+    margin-left: 100px;
+}
+
+.sidebar.hide .main-sidebar .list-item span{
+    display: none;
+}
+
+/* about */
+.palakonto{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.kotak{
+    background-color: #f8eaeb;
+    width: 800px;
+    height: 350px;
+    border-radius: 20px;
+    padding: 20px;
+}
+.main img{
+    border-radius: 50%;
+    height: 190px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.main h1{
+    margin: 30px 0;
+}
+
+/* review */
+.review{
+    background-color: rgb(202, 27, 15);
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 60px;
+    width: 200px;
+}
+.review a{
+    text-decoration: none;
+    color: rgb(255, 248, 248);
+}
+.review:hover{
+    transform: translateY(18px) ;
+    transition: 0.4s ease-in-out;  
+}
+.review1 img{
+    height: 190;
+    width: 200;
+    border-radius: 50%;
+}
+.review1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 70px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.rev{
+    background-color:white;
+    height: 400px;
+    width: 200px;
+    padding: 50px;
+    border-radius: 20px;
+}
+.rev2{
+    background-color: white;
+    height: 400px;
+    width: 200px;
+    padding: 50px;
+    border-radius: 20px;
+}
+.rev3{
+    background-color: white;
+    height: 400px;
+    width: 200px;
+    padding: 50px;
+    border-radius: 20px;
+}
+.katariview{
+    margin: 50px 0;
+    margin-left: 100px;
+    background-color: white;
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+.asede{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Footer */
+.footer{
+    background-color: rgb(255, 109, 4);
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.footerkanankiri{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.sosmedfooter{
+    display: flex;
+    flex-direction: column;
+}
+
+.footerkiri{
+    padding-top: 50px ;
+    padding-left: 50px;
+}
+
+.footerkanan{
+    padding-top: 50px;
+    padding-right: 50px;
+}
+.jdfooterkiri{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.isifooterkiri{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.garisf{
+    background-color: #ffffff;
+    height: 1px;
+    margin: 0px 50px;
+}
+.copyright{
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+/* Footer */

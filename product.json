@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1, 
+        "name": "Nasi Kuning 5k",
+        "price": 5000,
+        "image": "img/nasikuning.jpeg"
+    },
+    {
+        "id": 2, 
+        "name": "Nasi Kuning 7k",
+        "price": 7000,
+        "image": "img/nasikuning.jpeg"
+    },
+    {
+        "id" : 3, 
+        "name" : "Nasi Kuning 10k",
+        "price" : 10000,
+        "image" : "img/nasikuning.jpeg"
+    },
+    {
+        "id" : 4, 
+        "name" : "Nasi Putih 5k",
+        "price" : 5000,
+        "image" : "img/nasiputih.jpeg"
+    },
+    {
+        "id" : 5, 
+        "name" : "Nasi Putih 7k",
+        "price" : 7000,
+        "image" : "img/nasiputih.jpeg"
+    },
+    {
+        "id" : 6, 
+        "name" : "Nasi Putih 10k",
+        "price" : 10000,
+        "image" : "img/nasiputih.jpeg"
+    },
+    {
+        "id" : 7, 
+        "name" : "Es Teh",
+        "price" : 3000,
+        "image" : "img/esteh.jpeg"
+    },
+    {
+        "id" : 8, 
+        "name" : "Es Gula",
+        "price" : 3000,
+        "image" : "img/esgula.jpeg"
+    },
+    {
+        "id" : 9, 
+        "name" : "Es Jeruk",
+        "price" : 3000,
+        "image" : "img/esjeruk.jpeg"
+    }
+   
+]

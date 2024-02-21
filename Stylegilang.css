@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-image:url(Img/Free\ \ Yellow\,\ Foodstuffs\,\ Poster\ Background\ Images\,\ Yellow\ Food\ Background\ Poster\ Photo\ Background\ PNG\ and\ Vectors.jpeg) ;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar{
+    background-color:#D2001A;
+    width: 260px;
+    padding: 24px;
+    display: flex;
+    box-sizing: border-box; 
+    flex-direction: column;
+    transition: all ease-in .3s;
+}
+
+.sidebar.hide{
+    width: 90px;
+    transition: all ease-out .3s;
+}
+
+.sidebar.hide .logo img{
+    width: 50px;
+    height: 50px;
+    display: none;
+
+}
+
+.sidebar.hide .header .namatoko{
+    display: none;
+}
+
+.sidebar.hide .list-item {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    box-sizing: content-box;
+    padding-left: 15px;
+    padding-right:0px ;
+    padding-top: 15px;
+}
+
+
+.sidebar.hide .list-item span{
+    margin-left: 100px;
+}
+
+.sidebar.hide .main-sidebar .list-item span{
+    display: none;
+}
+
+.logo img{
+    height: 8rem;
+    width: 8rem;
+    padding: 20px 20px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.main{
+    flex-grow: 1;
+    /* background-size: cover; */
+}
+
+.sidebar  .header .namatoko{
+    font-weight: 900;
+    font-size: 30px;
+    text-align: center;
+    color: #ffff;
+    display: block;
+}
+
+
+
+.sidebar  .header .namatoko span{
+    font-weight: 900;
+    font-size: 30px;
+    text-align: center;
+    color: orange;
+}
+
+.main-sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-sidebar .list-item{
+    display: flex;
+    margin: 1rem 0;
+}
+
+.main-sidebar .list-item img{
+    height: 1.5rem;
+    width: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-sidebar .list-item a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+}
+
+.main-sidebar .list-item a span{
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding-left: 2rem;
+}
+
+
+
+.main-sidebar .list-item{
+    display: flex;
+    flex-direction:row ;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 212px;
+    cursor: pointer;
+    transition:all ease-in .2s;
+}
+
+.main-sidebar .list-item:hover{
+    background-color: orange;
+    
+}
+
+/* toggle menu */
+#menu-button{
+    width: 42px;
+    position: absolute;
+    overflow: hidden;
+    margin: 20px;
+    background-color: #D2001A;
+    padding: 10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+
+#menu-label{
+    position: relative;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+}
+
+#menu-checkbox{
+    display: none;
+}
+
+#hamburger, #menu-label:after, #menu-label:before{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+}
+
+#menu-label:after, #menu-label:before{
+    content:"";
+
+    transition:0.4s cubic-bezier(0.075, 0.82, 0.165, 1) left;
+}
+
+#menu-label:before{
+    top: 0;
+}
+
+#menu-label:after{
+    top: 10px;
+}
+
+#hamburger{
+    top: 20px;
+}
+
+#hamburger:before{
+    content:"MENU";
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 0;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#menu-checkbox:checked + #menu-label:before{
+    left: -55px;
+}
+
+#menu-checkbox:checked + #menu-label:after{
+    left: 55px;
+}
+
+#menu-checkbox:checked + #menu-label #hamburger:before{
+    animation:moveUpThenDown 0.8s  ease 0.2s forwards,
+    shakeUp 0.8s ease 0.2s forwards,
+    shakeDown 0.2s ease 0.8s forwards;  
+}
+
+@keyframes moveUpThenDown {
+    0%{
+        top: 0;
+    }
+    50%{
+        top: -35px;
+    }
+    100%{
+        top: -17px;
+    }
+}
+
+@keyframes shakeUp {
+    0%{
+        transform: rotateZ(0);
+    }
+    25%{
+        transform: rotateZ(-10deg);
+    }
+    50%{
+        transform: rotateZ(0);
+    }
+    75%{
+        transform: rotateZ(10deg);
+    }
+    100%{
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes shakeDown {
+    0%{
+        transform: rotateZ(0);
+    }
+    80%{
+        transform: rotateZ(3deg);
+    }
+    90%{
+        transform: rotateZ(-3deg);
+    }
+    100%{
+        transform: rotateZ(0);
+    }
+}
+
+/* Main-container */
+.main-container{
+    width: 900px;
+    max-width: 90vh;
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+    transition: transform .5s;
+}
+
+.main-container .icon-cart img{
+    width: 30px;
+}
+
+.main-container header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.main-container .icon-cart{
+    position: relative;
+    cursor: pointer;
+} 
+
+.main-container .icon-cart span{
+    display: flex;
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #ffff;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+}
+
+.listProduct .item img{
+    width: 100%;
+    /* filter: drop-shadow(0 10px 5px #0009); */
+}
+
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.listProduct .item{
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.listProduct .item h2{
+    font-size: 1rem;
+    padding-top: 10px;
+    font-weight: 700;
+}
+
+.listProduct .item .price{
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px;
+
+}
+
+.listProduct .item .price::before{
+    content: 'Rp.';
+}
+
+
+.listProduct .item button{
+    background-color: black;
+    color: #eee;
+    padding: 10px 20px;
+    border-radius: 10px;
+    /* margin-top: px */
+    border: none;
+    cursor: pointer;
+}
+
+.cartTab{
+    width: 300px;
+    background-color: #D2001A;
+    color: white;
+    position: fixed;
+    inset: 0 -400px 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+}
+
+body.showCart .cartTab{
+    inset: 0 0 0 auto;
+}
+
+body.showCart .main-container{
+    transform: translateX(-150px);
+}
+
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+}
+
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .btn button{
+    background-color: orange;
+    border: none;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+
+.cartTab .btn .Close{
+    background-color: black;
+}
+
+.cartTab .listCart .item img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.cartTab .listCart .item{
+    display: grid;
+    grid-template-columns: 70px 50px 50px 1fr ;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    padding: auto;
+    line-height: 1.4rem;
+}
+
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: white;
+}
+
+.listCart{
+    overflow: auto;
+}
+
+.listCart::-webkit-scrollbar{
+    width: 0;
+}
+
+.main-container .title{
+    font-size: 2rem;
+    font-weight: 900;
+    color: black;
+}
+/* Footer */
+.footer{
+    background-color: rgb(255, 109, 4);
+    color: #ffffff;
+    margin-top: 100px;
+}
+
+.footerkanankiri{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.sosmedfooter{
+    display: flex;
+    flex-direction: column;
+}
+
+.footerkiri{
+    padding-top: 50px ;
+    padding-left: 50px;
+}
+
+.footerkanan{
+    padding-top: 50px;
+    padding-right: 50px;
+}
+.jdfooterkiri{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.isifooterkiri{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.garisf{
+    background-color: #ffffff;
+    height: 1px;
+    margin: 0px 50px;
+}
+.copyright{
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+/* Footer */
